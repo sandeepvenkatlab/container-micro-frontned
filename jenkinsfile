@@ -4,9 +4,7 @@ pipeline {
         stage("build") {
             steps {
                 sh """
-                aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin
-                docker build -t ecrurl:$BUILD_NUMBER .
-                docker push ecrurl:$BUILD_NUMBER
+                ls
                 """
             }
         }
